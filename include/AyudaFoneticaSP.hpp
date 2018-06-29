@@ -90,6 +90,59 @@ class AyudaFoneticaSP
             }
             cout << palabra;
         }
+        /*
+        * Todas en horizontal
+        **/
+        void palabrasHorizontal(string **arr,int lengX,int lengY){
+            int i,j,aux;
+
+            string *salida = new string[lengX*lengY];
+            for(i=0;i<lengY;i++){
+                for(j=0;j<lengX;j++){
+                    if(i==0){
+                        for(aux=j;aux<lengX;aux++){
+                            salida[aux]=salida[aux]+arr[i][j];
+                        }
+                    }else{
+                        for(aux=j+(lengX*(i));aux<lengX*(i+1);aux++){
+                            salida[aux]=salida[aux]+arr[i][j];
+                        }
+                    }
+
+
+                }
+            }
+            for(i=0;i<lengX*lengY;i++){
+                cout << salida[i] << endl;
+            }
+        }
+        /*
+        * Tomar palabra por indice
+        **/
+        void tomarPalabraPorIndice(char **arr,int lengX,int lengY,int posX,int posY){
+            int i;
+            string* salida = new string[4];
+            cout<< arr[posX][posY] << endl;
+            //horizontal izquierda
+            for(i=posX;i>=0;i--){
+                salida[0] = salida[0] + arr[posY][i];
+            }
+            //horizontal derecha
+            for(i=posX;i<lengX;i++){
+                salida[1] = salida[1] + arr[posY][i];
+            }
+            //vertical arriba
+            for(i=posY;i>=0;i--){
+                salida[2] = salida[2] + arr[i][posX];
+            }
+            //vertical abajo
+            for(i=posY;i<lengY;i++){
+                salida[3] = salida[3] + arr[i][posX];
+            }
+            for(i=0;i<4;i++){
+                cout << i << ")" <<salida[i] << endl;
+            }
+        }
         /** Default constructor */
 //        AyudaFoneticaSP(int filas, int columnas, char** matriz, int cantPalabrasABuscar, string* palabrasABuscar){
 //            this->filas = filas;

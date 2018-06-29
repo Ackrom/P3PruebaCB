@@ -6,10 +6,25 @@ using namespace std;
 
 int main()
 {
+    char **arr = new char*[3];
+    int i,j;
+    for(i=0;i<3;i++){
+        arr[i] = new char[3];
+    }
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            cin >> arr[i][j];
+            cout << arr[i][j];
+        }
+        cout << endl;
+    }
+
 
     AyudaFoneticaSP SP;
+    SP.tomarPalabraPorIndice(arr,3,3,1,1);
+    //SP.palabrasHorizontal(arr,5,5);
     //SP.unirNumerosConsecutivos("p222233322223333");
-    SP.letraYPrimerosNumeros("ff");
+    //SP.letraYPrimerosNumeros("ff");
 //    int fila, columna;
 //    int i;
 //    cin>> fila >>columna;

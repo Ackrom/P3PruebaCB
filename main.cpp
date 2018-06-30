@@ -6,22 +6,28 @@ using namespace std;
 
 int main()
 {
-    char **arr = new char*[3];
-    int i,j;
-    for(i=0;i<3;i++){
-        arr[i] = new char[3];
-    }
-    for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
-            cin >> arr[i][j];
-            cout << arr[i][j];
-        }
-        cout << endl;
-    }
 
-
+    string *lista= new string[10];
+    int i;
+    for(i=0;i<10;i++){
+        lista[i] = "hola";
+    }
     AyudaFoneticaSP SP;
-    SP.tomarPalabraPorIndice(arr,3,3,1,1);
+    SP.persistencia(lista,10,"prueba.txt");
+    //    char **arr = new char*[3];
+    //    int i,j;
+    //    for(i=0;i<3;i++){
+    //        arr[i] = new char[3];
+    //    }
+    //    for(i=0;i<3;i++){
+    //        for(j=0;j<3;j++){
+    //            cin >> arr[i][j];
+    //            cout << arr[i][j];
+    //        }
+    //        cout << endl;
+    //    }
+
+    //SP.tomarPalabraPorIndice(arr,3,3,1,1);
     //SP.palabrasHorizontal(arr,5,5);
     //SP.unirNumerosConsecutivos("p222233322223333");
     //SP.letraYPrimerosNumeros("ff");

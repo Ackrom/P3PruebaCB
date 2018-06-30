@@ -2,6 +2,7 @@
 #define AYUDAFONETICASP_H
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class AyudaFoneticaSP
@@ -142,6 +143,18 @@ class AyudaFoneticaSP
             for(i=0;i<4;i++){
                 cout << i << ")" <<salida[i] << endl;
             }
+        }
+        /*
+        * Incertar en archivo
+        **/
+        void persistencia(string *arr,int length,string nombreArch){
+            ofstream archivo(nombreArch.c_str());  // objeto de la clase ofstream
+
+            int i;
+            for(i=0;i<length;i++){
+                archivo << arr[i] << endl;
+            }
+            archivo.close();
         }
         /** Default constructor */
 //        AyudaFoneticaSP(int filas, int columnas, char** matriz, int cantPalabrasABuscar, string* palabrasABuscar){
